@@ -20,7 +20,7 @@ def play_the_computer():
     global player1
     global player2
     player1=""
-    player2=Player("the computer")
+    player2=Player("The Computer")
     return render_template("play.html", title="Play the Computer", who="the Computer", player="1")
 
 @app.route("/player-chosen", methods=["POST"])
@@ -48,17 +48,10 @@ def display_results(p1choice, p2choice):
     global player1
     global player2
     game = Game(player1,player2)
-    if game.play_game():
-        winner = game.play_game()
-    else:
-        winner = None
-    if winner == player1:
-        loser = player2
-    elif winner == player2:
-        loser = player1
-    if winner:
-        display_text = f"{winner.player}'s {winner.choice} {winner.method} {loser.player}'s {loser.choice}!"
-        winner_text = f"{winner.player} Wins!!! Care for another round?"
+    game.play_game()
+    if game.winner:
+        display_text = f"{game.winner.player}'s {game.winner.choice} {game.method} {game.loser.player}'s {game.loser.choice}!"
+        winner_text = f"{game.winner.player} Wins!!! Care for another round?"
     else:
         display_text = f"This game is all tied up, you both chose {player1.choice}."
         winner_text = "Let's go again again and see if we can find a winner"
