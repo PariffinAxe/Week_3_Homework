@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }} - Rock Paper Scissors</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='base_style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Rock Paper Scissors</h1>
+        <nav>
+            <a href="/""><button>Home</button></a>
+            <a href="/Friend"><button>Play against a Friend</button></a>
+            <a href="/Computer"><button>Play The Computer</button></a>
+        </nav>
+    </header>
+    <main>
+        {% block content %}
+
+        {% endblock %}
+    </main>
+    <footer>
+        <h2>&#169; MikeyGamesLtd. </h2>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>You are playing {{ who }}</h1>
+<h2>You are player {{ player }}</h2>
+<form action="player-chosen" method="POST" id="main-form">
+    <div>
+        <label for="name">Please Enter Your Name</label>
+        <input type="text" name="name" id="name">
+    </div>
+    <div>
+        <label for="selection">Please make your choice</label>
+        <select name="selection" id="selection">
+            <option value="Rock">Rock</option>
+            <option value="Paper">Paper</option>
+            <option value="Scissors">Scissors</option>
+        </select>
+        <input type="submit" value="submit">
+    </div>
+</form>
+
+{% endblock %}
